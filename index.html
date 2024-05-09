@@ -31,11 +31,10 @@
           </div>
           <nav>
             <ul>
-              // Onclick should resize the window to the respective section
-              <li><a href="#intro" onclick='window.dispatchEvent(new Event("resize"));'>Intro</a></li>
-              <li><a href="#work" onclick='window.dispatchEvent(new Event("resize"));'>Work</a></li>
-              <li><a href="#about" onclick='window.dispatchEvent(new Event("resize"));'>About</a></li>
-              <li><a href="#contact" onclick='window.dispatchEvent(new Event("resize"));'>Contact</a></li>
+              <li><a href="#intro">Intro</a></li>
+              <li><a href="#work">Work</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
               <!--<li><a href="#elements">Elements</a></li>-->
             </ul>
           </nav>
@@ -199,11 +198,10 @@
       $(window).scroll(function () {
         effect.setOptions({
           blurFactor: 0.27 + $(window).scrollTop() / 1000,
+          window.dispatchEvent(new Event("resize"));
         });
       });
-      window.onload = function () {
-			window.dispatchEvent(new Event("resize"));
-		};
+      
     </script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
