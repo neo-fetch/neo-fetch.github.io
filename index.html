@@ -198,8 +198,8 @@
       $(window).scroll(function () {
         effect.setOptions({
           blurFactor: 0.27 + $(window).scrollTop() / 1000,
-          window.dispatchEvent(new Event("resize"));
         });
+        window.dispatchEvent(new Event("resize"));
       });
       
     </script>
