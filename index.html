@@ -171,8 +171,7 @@
         <!-- Footer -->
         <footer id="footer">
           <p class="copyright">
-            Thanks to <a href="https://html5up.net">HTML5 UP</a> for the design
-            template.
+            Designed by me using Vantajs and HTML5UP. <a href="https://github.com/neo-fetch/neo-fetch.github.io">GitHub</a>
           </p>
         </footer>
       </div>
@@ -195,12 +194,15 @@
         speed: 3.0,
         zoom: 4,
       });
-      // blur the effect as the user scrolls down
+      // blur the effect as the user scrolls down and resize every 100ms
       $(window).scroll(function () {
         effect.setOptions({
           blurFactor: 0.27 + $(window).scrollTop() / 1000,
         });
       });
+      setInterval(() => {
+        effect.resize();
+      }, 100);
     </script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
