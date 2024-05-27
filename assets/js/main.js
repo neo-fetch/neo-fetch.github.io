@@ -298,8 +298,8 @@
 							location.hash = '';
 							// the background is a div with id "bg" and the blur is applied to it. So we remove the blur class to de-blur the background.
 							var bg = document.getElementById("bg");
-							console.log(bg.classList);
-							bg.classList.remove("blur");
+							console.log(bg.classList.contains("blur"));
+							bg.style.filter = "blur(0px)";
 						});
 
 				// Prevent clicks from inside article from bubbling.
