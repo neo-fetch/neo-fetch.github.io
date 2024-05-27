@@ -291,13 +291,15 @@
 
 				var $this = $(this);
 
-				// Close.
+				// Close. Currently on clicking the articles, the background blurs and the article is shown. This is to close the article so we de-blur the background.
 					$('<div class="close">Close</div>')
 						.appendTo($this)
 						.on('click', function() {
 							location.hash = '';
-							// De blur the background on id bg
-							$('#bg').removeClass('blur');
+							// the background is a div with id "bg" and the blur is applied to it. So we remove the blur class to de-blur the background.
+							var bg = document.getElementById("bg");
+							console.log(bg.classList);
+							bg.classList.remove("blur");
 						});
 
 				// Prevent clicks from inside article from bubbling.
