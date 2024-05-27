@@ -296,6 +296,8 @@
 						.appendTo($this)
 						.on('click', function() {
 							location.hash = '';
+							// De blur the background on id bg
+							$('#bg').removeClass('blur');
 						});
 
 				// Prevent clicks from inside article from bubbling.
