@@ -28,10 +28,11 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#intro">Intro</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#intro" onclick="applyBlurEffect()">Intro</a></li>
+          <li><a href="#work" onclick="applyBlurEffect()">Work</a></li>
+          <li><a href="#about" onclick="applyBlurEffect()">About</a></li>
+          <li><a href="#contact" onclick="applyBlurEffect()">Contact</a></li>
+
           <!--<li><a href="#elements">Elements</a></li>-->
         </ul>
       </nav>
@@ -149,29 +150,13 @@
   <div id="bg"></div>
   <!-- Scripts -->
   <script src="assets/js/jquery.min.js"></script>
-  <!-- <script>
-      const effect = VANTA.FOG({
-        el: "#VantaBg",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        highlightColor: 0x0,
-        midtoneColor: 0xffffff,
-        lowlightColor: 0x484848,
-        baseColor: 0x0,
-        blurFactor: 0.27,
-        speed: 3.0,
-        zoom: 4,
-      });
-      // blur the effect as the user scrolls down and resize every 100ms
-      $(window).scroll(function () {
-        effect.setOptions({
-          blurFactor: 0.27 + $(window).scrollTop() / 1000,
-        });
-        window.dispatchEvent(new Event("resize"));
-      });
-      
-    </script> -->
+  <!-- Create the blur effect -->
+  <script>
+    function applyBlurEffect() {
+      var blur = document.getElementById("bg");
+      blur.style.filter = "blur(5px)";
+    }
+  </script> -->
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
