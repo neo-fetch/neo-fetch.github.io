@@ -94,7 +94,7 @@
       <!-- Contact -->
       <article id="contact">
         <h2 class="major">Contact</h2>
-        <form method="post" onsubmit="mailtoWithSubjectAndBody('Name: ' + document.getElementById('name').value + '\nEmail: ' + document.getElementById('email').value + '\nMessage: ' + document.getElementById('message').value)">
+        <form method="post" onsubmit="handleFormSubmit(event)">
           <div class="fields">
             <div class="field half">
               <label for="name">Name</label>
@@ -156,13 +156,25 @@
       blur.style.filter = "blur(5px)";
     }
   </script> -->
-  <script>
-    function mailtoWithSubjectAndBody(body) {
-      // mailto:mayankchandrashekhar.deshpande@outlook.com?subject=Contact%20from%20your%20website&body=Test%20body
-      console.warn(body);
-      var mailto_link = 'mailto:mayankchandrashekhar.deshpande@outlook.com?subject=Contact%20from%20your%20website&body=' + body;
-    }
-  </script>
+<script>
+  function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the form values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+
+    // Call the mailtoWithSubjectAndBody function
+    mailtoWithSubjectAndBody('Contact Form Submission', 'Name: ' + name + '\nEmail: ' + email + '\nMessage: ' + message);
+  }
+
+  function mailtoWithSubjectAndBody(subject, body) {
+    var mailto_link = 'mailto:mayankchandrashekhar.deshpande@outlook.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    var win = window.open(mailto_link, 'emailWindow');
+    if (win && win.open && !win.closed) win.close();
+  }
+</script>
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
