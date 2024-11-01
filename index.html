@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r95/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.16/vanta.fog.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-
 <html>
 
 <head>
@@ -98,7 +94,7 @@
       <!-- Contact -->
       <article id="contact">
         <h2 class="major">Contact</h2>
-        <form method="post" action="mailto: mayankchandrashekhar.deshpande@outlook.com">
+        <form method="post" onsubmit="mailtoWithSubjectAndBody('Contact from your website', 'Name: ' + document.getElementById('name').value + '\nEmail: ' + document.getElementById('email').value + '\nMessage: ' + document.getElementById('message').value)">
           <div class="fields">
             <div class="field half">
               <label for="name">Name</label>
@@ -160,7 +156,13 @@
       blur.style.filter = "blur(5px)";
     }
   </script> -->
-  <!-- De blur on close -->
+  <script>
+    function mailtoWithSubjectAndBody(subject, body) {
+      var mailto_link = 'mailto:?subject=' + subject + '&body=' + body;
+      win = window.open(mailto_link, 'emailWindow');
+      if (win && win.open && !win.closed) win.close();
+    }
+  </script>
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
