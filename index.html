@@ -171,7 +171,7 @@
 
   function mailtoWithSubjectAndBody(subject, body) {
     var mailto_link = 'mailto:mayankchandrashekhar.deshpande@outlook.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    var win = window.open(mailto_link, 'emailWindow');
+    var win = window.open(mailto_link, '_self');
     if (win && win.open && !win.closed) win.close();
   }
 </script>
