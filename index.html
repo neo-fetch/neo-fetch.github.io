@@ -94,7 +94,7 @@
       <!-- Contact -->
       <article id="contact">
         <h2 class="major">Contact</h2>
-        <form method="post" onsubmit="mailtoWithSubjectAndBody('Contact from your website', 'Name: ' + document.getElementById('name').value + '\nEmail: ' + document.getElementById('email').value + '\nMessage: ' + document.getElementById('message').value)">
+        <form method="post" onsubmit="mailtoWithSubjectAndBody('Name: ' + document.getElementById('name').value + '\nEmail: ' + document.getElementById('email').value + '\nMessage: ' + document.getElementById('message').value)">
           <div class="fields">
             <div class="field half">
               <label for="name">Name</label>
@@ -157,10 +157,10 @@
     }
   </script> -->
   <script>
-    function mailtoWithSubjectAndBody(subject, body) {
-      var mailto_link = 'mailto:?subject=' + subject + '&body=' + body;
-      win = window.open(mailto_link, 'emailWindow');
-      if (win && win.open && !win.closed) win.close();
+    function mailtoWithSubjectAndBody(body) {
+      // mailto:mayankchandrashekhar.deshpande@outlook.com?subject=Contact%20from%20your%20website&body=Test%20body
+      console.warn(body);
+      var mailto_link = 'mailto:mayankchandrashekhar.deshpande@outlook.com?subject=Contact%20from%20your%20website&body=' + body;
     }
   </script>
   <script src="assets/js/browser.min.js"></script>
