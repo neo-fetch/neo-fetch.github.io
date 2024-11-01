@@ -166,7 +166,7 @@
     var message = document.getElementById('message').value;
 
     // Call the mailtoWithSubjectAndBody function
-    mailtoWithSubjectAndBody('Contact Form Submission', 'Name: ' + name + '\nEmail: ' + email + '\nMessage: ' + message);
+    mailtoWithSubjectAndBody('Contact Form Submission', 'From:\n' + name + ' (' + email + ')\n\n' + message); 
   }
 
   function mailtoWithSubjectAndBody(subject, body) {
