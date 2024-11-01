@@ -98,22 +98,28 @@
       <!-- Contact -->
       <article id="contact">
         <h2 class="major">Contact</h2>
-        <div class="fields">
-          <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-            <div style="font-size: 3.5em; padding-bottom: 0.5em;">
-              <a href="mailto:mayankchandrashekhar.deshpande@outlook.com" class="fa fa-envelope">
-              </a>
+        <form method="post" action="mailto: mayankchandrashekhar.deshpande@outlook.com">
+          <div class="fields">
+            <div class="field half">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" />
             </div>
-            <div style="font-size: 3.5em; padding-top: 0.5em; padding-bottom: 0.5em;">
-              <a href="tel:+91-88973-37070" class="fa fa-phone-square">
-              </a>
+            <div class="field half">
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email" />
             </div>
-            <div style="font-size: 3.5em; padding-top: 0.5em;">
-              <a href="https://maps.app.goo.gl/xDTmmiuDYAhEZW7F9" class="fa fa-map-marker">
-              </a>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea name="message" id="message" rows="4"></textarea>
             </div>
           </div>
-        </div>
+          <ul class="actions">
+            <li>
+              <input type="submit" value="Send Message" class="primary" />
+            </li>
+            <li><input type="reset" value="Reset" /></li>
+          </ul>
+        </form>
       </article>
       <ul class="icons">
         <li>
