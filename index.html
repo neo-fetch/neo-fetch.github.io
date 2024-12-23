@@ -180,7 +180,7 @@
   <script src="assets/js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
-  <script>
+  <!-- <script>
     // Initialize Vanta fog effect
     const vantaEffect = VANTA.FOG({
       el: "#bg",
@@ -237,7 +237,24 @@
   
     // Trigger the zoom animation from 2 to 0.6 over 1 second
     animateZoom(0.2, 0.6, 4500);
-  </script>
+  </script> -->
+<script>
+  VANTA.FOG({
+    el: "#bg",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    highlightColor: 0xffffff,
+    midtoneColor: 0xffffff,
+    lowlightColor: 0xc3c3c3,
+    baseColor: 0x000000,
+    speed: 2.60,
+    blurFactor: 0.60,
+    zoom: 0.60
+  });
+</script>
 </body>
 
 </html>
