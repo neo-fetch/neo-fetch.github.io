@@ -113,7 +113,7 @@
             <li>
               <input type="submit" value="Send Message" class="primary" />
             </li>
-            <li><input type="reset" value="Reset" /></li>
+            <li><input type="reset" value="Clear" /></li>
           </ul>
         </form>
       </article>
@@ -138,7 +138,7 @@
     <!-- Footer -->
     <footer id="footer">
       <p class="copyright">
-        My <a href="https://github.com/neo-fetch/neo-fetch.github.io">GitHub</a>
+        <a href="https://github.com/neo-fetch/neo-fetch.github.io">My GitHub</a>
       </p>
     </footer>
   </div>
@@ -155,33 +155,32 @@
       blur.style.filter = "blur(5px)";
     }
   </script>
-<script>
-  function handleFormSubmit(event) {
-    event.preventDefault(); // Prevent the default form submission
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault(); // Prevent the default form submission
 
-    // Get the form values
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
+      // Get the form values
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
 
-    // Call the mailtoWithSubjectAndBody function
-    mailtoWithSubjectAndBody('Contact Form Submission', 'From:\n' + name + ' (' + email + ')\n\n' + message); 
-  }
+      // Call the mailtoWithSubjectAndBody function
+      mailtoWithSubjectAndBody('Contact Form Submission', 'From:\n' + name + ' (' + email + ')\n\n' + message);
+    }
 
-  function mailtoWithSubjectAndBody(subject, body) {
-    var mailto_link = 'mailto:mayankchandrashekhar.deshpande@outlook.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    var win = window.open(mailto_link, '_self');
-    if (win && win.open && !win.closed) win.close();
-  }
-</script>
+    function mailtoWithSubjectAndBody(subject, body) {
+      var mailto_link = 'mailto:mayankchandrashekhar.deshpande@outlook.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var win = window.open(mailto_link, '_self');
+      if (win && win.open && !win.closed) win.close();
+    }
+  </script>
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
-  <!-- <script>
-    // Initialize Vanta fog effect
+  <script>
     const vantaEffect = VANTA.FOG({
       el: "#bg",
       mouseControls: true,
@@ -197,64 +196,53 @@
       blurFactor: 0.60,
       zoom: 0.60
     });
-  
-    // Function to animate the zoom property
+
     function getNewColorHex(startColorHex, endColorHex, progress) {
       const startColor = new THREE.Color(startColorHex);
       const endColor = new THREE.Color(endColorHex);
       const currentColor = startColor.clone().lerp(endColor, progress);
       return currentColor.getHex();
     }
-    
-    function animateZoom(startZoom, endZoom, duration) {
-      const startSpeed = 5;
-      const endSpeed = 1.60;
-      const endhighlightColor = 0xffffff;
-      const endbaseColor = 0x000000;
-      const endmidtoneColor = 0xd4d4d4;
-      const endlowlightColor = 0xcacaca;
-      // for highlightColor, we can use endbaseColor for start and end with startbaseColor, since 
-      // wait for 1.5 seconds before starting the zoom animation
-      const startTime = performance.now();
-  
-      function updateZoom(currentTime) {
-        const elapsedTime = (currentTime - startTime)
-        const progress = Math.min(1, Math.pow(elapsedTime / duration, 1.5));
-        const currentZoom = startZoom + (endZoom - startZoom) * progress;
-        const currentSpeed = startSpeed + (endSpeed - startSpeed) * progress;
-        const currenthighlightColor = getNewColorHex(endbaseColor, endhighlightColor, progress);
-        const currentmidtoneColor = getNewColorHex(endbaseColor, endmidtoneColor, progress);
-        const currentlowlightColor = getNewColorHex(endbaseColor, endlowlightColor, progress);
-        vantaEffect.setOptions({ blurFactor: currentZoom, speed: currentSpeed, highlightColor: currenthighlightColor, midtoneColor: currentmidtoneColor, lowlightColor: currentlowlightColor });
-  
-        if (progress < 1) {
-          requestAnimationFrame(updateZoom);
-        }
-      }
 
-      requestAnimationFrame(updateZoom);
+    function animateZoom(startZoom, endZoom, duration) {
+      try {
+        const startSpeed = 5;
+        const endSpeed = 1.60;
+        const endhighlightColor = 0xffffff;
+        const endbaseColor = 0x000000;
+        const endmidtoneColor = 0xd4d4d4;
+        const endlowlightColor = 0xcacaca;
+        const startTime = 0;
+
+        function updateZoom(currentTime) {
+          const elapsedTime = (currentTime - startTime);
+          const progress = Math.min(1, Math.pow(elapsedTime / duration, 1.5));
+          const currentZoom = startZoom + (endZoom - startZoom) * progress;
+          const currentSpeed = startSpeed + (endSpeed - startSpeed) * progress;
+          const currenthighlightColor = getNewColorHex(endbaseColor, endhighlightColor, progress);
+          const currentmidtoneColor = getNewColorHex(endbaseColor, endmidtoneColor, progress);
+          const currentlowlightColor = getNewColorHex(endbaseColor, endlowlightColor, progress);
+          vantaEffect.setOptions({
+            blurFactor: currentZoom,
+            speed: currentSpeed,
+            highlightColor: currenthighlightColor,
+            midtoneColor: currentmidtoneColor,
+            lowlightColor: currentlowlightColor
+          });
+
+          if (progress < 1) {
+            requestAnimationFrame(updateZoom);
+          }
+        }
+
+        requestAnimationFrame(updateZoom);
+      } catch (error) {
+        console.error('Error during zoom animation:', error);
+      }
     }
-  
-    // Trigger the zoom animation from 2 to 0.6 over 1 second
+
     animateZoom(0.2, 0.6, 4500);
-  </script> -->
-<script>
-  VANTA.FOG({
-    el: "#bg",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    highlightColor: 0xffffff,
-    midtoneColor: 0xd4d4d4,
-    lowlightColor: 0xc3c3c3,
-    baseColor: 0xcacaca,
-    speed: 2.60,
-    blurFactor: 0.60,
-    zoom: 0.60
-  });
-</script>
+  </script>
 </body>
 
 </html>
