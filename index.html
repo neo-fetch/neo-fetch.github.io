@@ -219,10 +219,6 @@
   
       function updateZoom(currentTime) {
         const elapsedTime = (currentTime - startTime)
-        // const progress = Math.min(elapsedTime / duration, 1);
-        // apply cubic easing to the progress to make the zoom effect slower at the end
-        // const progress = Math.min(1, Math.pow(elapsedTime / duration, 3));
-        // more slower at the end
         const progress = Math.min(1, Math.pow(elapsedTime / duration, 1.5));
         const currentZoom = startZoom + (endZoom - startZoom) * progress;
         const currentSpeed = startSpeed + (endSpeed - startSpeed) * progress;
