@@ -133,7 +133,6 @@
           <a href="https://github.com/neo-fetch/" class="icon brands fa-github"><span class="label">GitHub</span></a>
         </li>
       </ul>
-      </article>
     </div>
 
     <!-- Footer -->
@@ -179,6 +178,70 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
+  <script>
+    // Initialize Vanta fog effect
+    const vantaEffect = VANTA.FOG({
+      el: "#bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      highlightColor: 0x000000,
+      midtoneColor: 0x000000,
+      lowlightColor: 0x000000,
+      baseColor: 0x000000,
+      speed: 2.60,
+      blurFactor: 0.60,
+      zoom: 0.60
+    });
+  
+    // Function to animate the zoom property
+    function getNewColorHex(startColorHex, endColorHex, progress) {
+      const startColor = new THREE.Color(startColorHex);
+      const endColor = new THREE.Color(endColorHex);
+      const currentColor = startColor.clone().lerp(endColor, progress);
+      return currentColor.getHex();
+    }
+    
+    function animateZoom(startZoom, endZoom, duration) {
+      const startSpeed = 5;
+      const endSpeed = 1.60;
+      const endhighlightColor = 0xffffff;
+      const endbaseColor = 0x000000;
+      const endmidtoneColor = 0xd4d4d4;
+      const endlowlightColor = 0xcacaca;
+      // for highlightColor, we can use endbaseColor for start and end with startbaseColor, since 
+      // wait for 1.5 seconds before starting the zoom animation
+      const startTime = performance.now();
+  
+      function updateZoom(currentTime) {
+        const elapsedTime = (currentTime - startTime)
+        // const progress = Math.min(elapsedTime / duration, 1);
+        // apply cubic easing to the progress to make the zoom effect slower at the end
+        // const progress = Math.min(1, Math.pow(elapsedTime / duration, 3));
+        // more slower at the end
+        const progress = Math.min(1, Math.pow(elapsedTime / duration, 1.5));
+        const currentZoom = startZoom + (endZoom - startZoom) * progress;
+        const currentSpeed = startSpeed + (endSpeed - startSpeed) * progress;
+        const currenthighlightColor = getNewColorHex(endbaseColor, endhighlightColor, progress);
+        const currentmidtoneColor = getNewColorHex(endbaseColor, endmidtoneColor, progress);
+        const currentlowlightColor = getNewColorHex(endbaseColor, endlowlightColor, progress);
+        vantaEffect.setOptions({ blurFactor: currentZoom, speed: currentSpeed, highlightColor: currenthighlightColor, midtoneColor: currentmidtoneColor, lowlightColor: currentlowlightColor });
+  
+        if (progress < 1) {
+          requestAnimationFrame(updateZoom);
+        }
+      }
+
+      requestAnimationFrame(updateZoom);
+    }
+  
+    // Trigger the zoom animation from 2 to 0.6 over 1 second
+    animateZoom(0.2, 0.6, 4500);
+  </script>
 </body>
 
 </html>
