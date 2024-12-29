@@ -24,8 +24,8 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#intro" onclick="changeFogColors(0x27292C, 0x5E5B54, 0xA2977A)">Intro</a></li>
-          <li><a href="#work" onclick="changeFogColors(0x495056, 0xB8C6DF, 0x8B8A81)">Work</a></li>
+          <li><a href="#intro" onclick="changeFogColors(0xA2977A, 0x5E5B54, 0x27292C)">Intro</a></li>
+          <li><a href="#work" onclick="changeFogColors(0x00205B, 0xB8C6DF, 0x8B8A81)">Work</a></li>
           <li><a href="#about" onclick="changeFogColors(0xC1BEB9, 0x976F3C, 0x773E28)">About</a></li>
           <li><a href="#contact" onclick="changeFogColors(0xB4B0A0, 0xA2A987, 0x7C846D)">Contact</a></li>
 
@@ -197,22 +197,44 @@
       zoom: 0.60
     });
 
-    function changeFogColors(highlightColor, midtoneColor, lowlightColor) {
-      vantaEffect.setOptions({
-        highlightColor: highlightColor,
-        midtoneColor: midtoneColor,
-        lowlightColor: lowlightColor
-      });
-    }
-
-    function defaultFogColors() {
-      $main_articles = $main.children('article');
-
-      vantaEffect.setOptions({
-        highlightColor: 0xffffff,
+    let latestModifiedColors = {
+      baseColor: 0x000000,
+      midtoneColor: 0xd4d4d4,
+      lowlightColor: 0xcacaca
+    };
+    const defaultFogColor = {
+        baseColor: 0x000000,
         midtoneColor: 0xd4d4d4,
         lowlightColor: 0xcacaca
-      });
+    };  
+
+    function changeFogColors(baseColor, midtoneColor, lowlightColor) {
+      const startTime = performance.now(); // But this doesnt work in chrome.
+      const duration = 2000;
+      latestModifiedColors = {
+        baseColor: baseColor,
+        midtoneColor: midtoneColor,
+        lowlightColor: lowlightColor
+      };
+      
+      function updateColors(currentTime) {
+        const elapsedTime = (currentTime - startTime);
+        const progress = Math.min(1, Math.pow(elapsedTime / duration, 1.5));
+        const currentBaseColor = getNewColorHex(defaultFogColor.baseColor, baseColor, progress);
+        const currentMidtoneColor = getNewColorHex(defaultFogColor.midtoneColor, midtoneColor, progress);
+        const currentLowlightColor = getNewColorHex(defaultFogColor.lowlightColor, lowlightColor, progress);
+        vantaEffect.setOptions({
+          baseColor: currentBaseColor,
+          midtoneColor: currentMidtoneColor,
+          lowlightColor: currentLowlightColor
+        });
+
+        if (progress < 1) {
+          requestAnimationFrame(updateColors);
+        }
+      }
+
+      requestAnimationFrame(updateColors);
     }
 
     function getNewColorHex(startColorHex, endColorHex, progress) {
@@ -261,6 +283,32 @@
 
     animateZoom(0.2, 0.6, 4500);
   </script>
+  <script>
+    function defaultFogColors() {
+      const startTime = performance.now(); // But this doesnt work in chrome.
+      const duration = 2000;
+      // We move from latestModifiedColors to defaultFogColors
+      console.log('latestModifiedColors', latestModifiedColors);
+      function updateColors(currentTime) {
+        const elapsedTime = (currentTime - startTime);
+        const progress = Math.min(1, Math.pow(elapsedTime / duration, 1.5));
+        const currentBaseColor = getNewColorHex(latestModifiedColors.baseColor, defaultFogColor.baseColor, progress);
+        const currentMidtoneColor = getNewColorHex(latestModifiedColors.midtoneColor, defaultFogColor.midtoneColor, progress);
+        const currentLowlightColor = getNewColorHex(latestModifiedColors.lowlightColor, defaultFogColor.lowlightColor, progress);
+        vantaEffect.setOptions({
+          baseColor: currentBaseColor,
+          midtoneColor: currentMidtoneColor,
+          lowlightColor: currentLowlightColor
+        });
+
+        if (progress < 1) {
+          requestAnimationFrame(updateColors);
+        }
+      }
+
+      requestAnimationFrame(updateColors);
+    }
+</script>
 </body>
 
 </html>
