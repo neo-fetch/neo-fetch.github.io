@@ -3,8 +3,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-import { VANTA } from "https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js";
-import { THREE } from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js";
+
 (function($) {
 
 	var	$window = $(window),
