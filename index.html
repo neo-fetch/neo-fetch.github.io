@@ -211,18 +211,18 @@
     function changeFogColors(baseColor, midtoneColor, lowlightColor) {
       const startTime = performance.now(); // But this doesnt work in chrome.
       const duration = 2000;
-      latestModifiedColors = {
-        baseColor: baseColor,
-        midtoneColor: midtoneColor,
-        lowlightColor: lowlightColor
-      };
-      
+      const oldLatestModifiedColors = latestModifiedColors;
       function updateColors(currentTime) {
         const elapsedTime = (currentTime - startTime);
         const progress = Math.min(1, Math.pow(elapsedTime / duration, 1.5));
-        const currentBaseColor = getNewColorHex(defaultFogColor.baseColor, baseColor, progress);
-        const currentMidtoneColor = getNewColorHex(defaultFogColor.midtoneColor, midtoneColor, progress);
-        const currentLowlightColor = getNewColorHex(defaultFogColor.lowlightColor, lowlightColor, progress);
+        const currentBaseColor = getNewColorHex(oldLatestModifiedColors.baseColor, baseColor, progress);
+        const currentMidtoneColor = getNewColorHex(oldLatestModifiedColors.midtoneColor, midtoneColor, progress);
+        const currentLowlightColor = getNewColorHex(oldLatestModifiedColors.lowlightColor, lowlightColor, progress);
+        latestModifiedColors = {
+          baseColor: currentBaseColor,
+          midtoneColor: currentMidtoneColor,
+          lowlightColor: currentLowlightColor
+        };
         vantaEffect.setOptions({
           baseColor: currentBaseColor,
           midtoneColor: currentMidtoneColor,
@@ -288,13 +288,17 @@
       const startTime = performance.now(); // But this doesnt work in chrome.
       const duration = 2000;
       // We move from latestModifiedColors to defaultFogColors
-      console.log('latestModifiedColors', latestModifiedColors);
       function updateColors(currentTime) {
         const elapsedTime = (currentTime - startTime);
         const progress = Math.min(1, Math.pow(elapsedTime / duration, 1.5));
         const currentBaseColor = getNewColorHex(latestModifiedColors.baseColor, defaultFogColor.baseColor, progress);
         const currentMidtoneColor = getNewColorHex(latestModifiedColors.midtoneColor, defaultFogColor.midtoneColor, progress);
         const currentLowlightColor = getNewColorHex(latestModifiedColors.lowlightColor, defaultFogColor.lowlightColor, progress);
+        latestModifiedColors = {
+          baseColor: currentBaseColor,
+          midtoneColor: currentMidtoneColor,
+          lowlightColor: currentLowlightColor
+        };
         vantaEffect.setOptions({
           baseColor: currentBaseColor,
           midtoneColor: currentMidtoneColor,
