@@ -300,6 +300,21 @@
 							var bg = document.getElementById("bg");
 							console.log(bg.classList.contains("blur"));
 							bg.style.filter = "blur(0px)";
+							VANTA.FOG({
+								el: "#bg",
+								mouseControls: true,
+								touchControls: true,
+								gyroControls: false,
+								minHeight: 200.00,
+								minWidth: 200.00,
+								highlightColor: 0xffffff,
+								midtoneColor: 0xd4d4d4,
+								lowlightColor: 0xcacaca,
+								baseColor: 0x000000,
+								speed: 1.60,
+								blurFactor: 0.60,
+								zoom: 0.60
+							  });
 						});
 
 				// Prevent clicks from inside article from bubbling.

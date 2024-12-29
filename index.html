@@ -24,10 +24,10 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#intro" onclick="applyBlurEffect()">Intro</a></li>
-          <li><a href="#work" onclick="applyBlurEffect()">Work</a></li>
-          <li><a href="#about" onclick="applyBlurEffect()">About</a></li>
-          <li><a href="#contact" onclick="applyBlurEffect()">Contact</a></li>
+          <li><a href="#intro" onclick="changeFogColors(0x27292C, 0x5E5B54, 0xA2977A)">Intro</a></li>
+          <li><a href="#work" onclick="changeFogColors(0x495056, 0xB8C6DF, 0x8B8A81)">Work</a></li>
+          <li><a href="#about" onclick="changeFogColors(0xC1BEB9, 0x976F3C, 0x773E28)">About</a></li>
+          <li><a href="#contact" onclick="changeFogColors(0xB4B0A0, 0xA2A987, 0x7C846D)">Contact</a></li>
 
           <!--<li><a href="#elements">Elements</a></li>-->
         </ul>
@@ -192,10 +192,28 @@
       midtoneColor: 0x000000,
       lowlightColor: 0x000000,
       baseColor: 0x000000,
-      speed: 2.60,
-      blurFactor: 0.60,
+      speed: 5,
+      blurFactor: 0.20,
       zoom: 0.60
     });
+
+    function changeFogColors(highlightColor, midtoneColor, lowlightColor) {
+      vantaEffect.setOptions({
+        highlightColor: highlightColor,
+        midtoneColor: midtoneColor,
+        lowlightColor: lowlightColor
+      });
+    }
+
+    function defaultFogColors() {
+      $main_articles = $main.children('article');
+
+      vantaEffect.setOptions({
+        highlightColor: 0xffffff,
+        midtoneColor: 0xd4d4d4,
+        lowlightColor: 0xcacaca
+      });
+    }
 
     function getNewColorHex(startColorHex, endColorHex, progress) {
       const startColor = new THREE.Color(startColorHex);
