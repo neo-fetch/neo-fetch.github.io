@@ -210,7 +210,7 @@
 
     function changeFogColors(baseColor, midtoneColor, lowlightColor) {
       const startTime = performance.now(); // But this doesnt work in chrome.
-      const duration = 2000;
+      const duration = 500;
       const oldLatestModifiedColors = latestModifiedColors;
       function updateColors(currentTime) {
         const elapsedTime = (currentTime - startTime);
@@ -281,12 +281,12 @@
       }
     }
 
-    animateZoom(0.2, 0.6, 4500);
+    animateZoom(0.2, 0.6, 500);
   </script>
   <script>
     function defaultFogColors() {
       const startTime = performance.now(); // But this doesnt work in chrome.
-      const duration = 2000;
+      const duration = 500;
       // We move from latestModifiedColors to defaultFogColors
       function updateColors(currentTime) {
         const elapsedTime = (currentTime - startTime);
