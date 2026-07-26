@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mayank Deshpande</title>
+    <link>https://mayankcdee.me/</link>
+    <description>Personal site and blog of Mayank Deshpande — engineering, AI research, and the occasional liner notes.</description>
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Jul 2026 09:37:33 GMT</lastBuildDate>
+    <atom:link href="https://mayankcdee.me/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Draw Your Agents: A Visual AI Agent Builder That Runs Entirely in Your Browser</title>
+      <link>https://mayankcdee.me/article/draw-your-agents-visual-ai-agent-builder/</link>
+      <guid isPermaLink="true">https://mayankcdee.me/article/draw-your-agents-visual-ai-agent-builder/</guid>
+      <pubDate>Mon, 08 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Meet Draw Your Agents: a drag-and-drop, no-code visual AI agent builder that compiles your agent workflow into a runnable Google ADK Python project. It runs 100% in your browser — no server, no sign-up, and your code never leaves your machine.</description>
+      <category>Visual Agent Builder</category>
+      <category>AI Agents</category>
+      <category>No-Code</category>
+      <category>Google ADK</category>
+      <category>React Flow</category>
+      <category>Browser-Based</category>
+      <enclosure url="https://raw.githubusercontent.com/neo-fetch/draw-your-agents/main/assets/sc%201.png" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>South Bengaluru, a Stove, and Old War Songs</title>
+      <link>https://mayankcdee.me/article/south-bengaluru-a-stove-and-old-war-songs/</link>
+      <guid isPermaLink="true">https://mayankcdee.me/article/south-bengaluru-a-stove-and-old-war-songs/</guid>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Liner notes from a 26-year-old's life in south Bengaluru — why I left a 1BHK for a PG, how cooking set me free, balancing work and the GMAT, and why I keep returning to old rock and metal as the world gets louder.</description>
+      <category>Personal</category>
+      <category>Bengaluru</category>
+      <category>Cooking</category>
+      <category>Music</category>
+      <category>Reflection</category>
+      <enclosure url="https://raw.githubusercontent.com/neo-fetch/mcbk/master/me%20cooking%20pasta.png" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>PDEpilot: Natural Language to Verified Solver Code</title>
+      <link>https://mayankcdee.me/article/pdepilot-natural-language-to-solver-code/</link>
+      <guid isPermaLink="true">https://mayankcdee.me/article/pdepilot-natural-language-to-solver-code/</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Meet PDEpilot: a fully autonomous multi-agent system that transforms natural language PDE descriptions into production-grade solver code — routing to OpenFOAM, FEniCSx, or SciPy — with intelligent preconditioning and self-correcting feedback loops.</description>
+      <category>Google ADK</category>
+      <category>OpenFOAM</category>
+      <category>FEniCSx</category>
+      <category>Multi-Agent Systems</category>
+      <category>CFD</category>
+      <category>Numerical Methods</category>
+      <enclosure url="https://raw.githubusercontent.com/neo-fetch/mcbk/refs/heads/master/hero_background.png" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>Lang-PINN: Bridging Natural Language and Scientific Simulation</title>
+      <link>https://mayankcdee.me/article/lang-pinn-natural-language-scientific-simulation/</link>
+      <guid isPermaLink="true">https://mayankcdee.me/article/lang-pinn-natural-language-scientific-simulation/</guid>
+      <pubDate>Fri, 12 Dec 2025 00:00:00 GMT</pubDate>
+      <description>Meet Lang-PINN: An LLM-driven multi-agent framework that bridges the gap between natural language and scientific simulation. Discover how four specialized agents automate the design, coding, and optimization of Physics-Informed Neural Networks.</description>
+      <category>AI</category>
+      <category>Physics-Informed Neural Networks</category>
+      <category>Multi-Agent Systems</category>
+      <category>LLMs</category>
+      <category>Research</category>
+      <enclosure url="https://raw.githubusercontent.com/neo-fetch/mcbk/refs/heads/master/PINNSLLMS.png" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>From Hover to SecureLogin: My Raspberry Pi Automation Journey</title>
+      <link>https://mayankcdee.me/article/raspberry-pi-automation-securelogin/</link>
+      <guid isPermaLink="true">https://mayankcdee.me/article/raspberry-pi-automation-securelogin/</guid>
+      <pubDate>Sat, 20 Sep 2025 00:00:00 GMT</pubDate>
+      <description>Discover how tinkering with a Raspberry Pi led to smarter living, automation, and the creation of SecureLogin. This article covers project highlights, technical insights, and tips for your own automation journey.</description>
+      <category>Raspberry Pi</category>
+      <category>Automation</category>
+      <category>SecureLogin</category>
+      <category>Python</category>
+      <category>React</category>
+      <enclosure url="https://raw.githubusercontent.com/neo-fetch/mcbk/refs/heads/master/IMG_0095.jpeg" type="image/png" length="0" />
+    </item>
+    <item>
+      <title>Understanding How Neural Networks Learn: A Peek into Physics and Frequencies</title>
+      <link>https://mayankcdee.me/article/how-neural-networks-learn-physics-and-frequencies/</link>
+      <guid isPermaLink="true">https://mayankcdee.me/article/how-neural-networks-learn-physics-and-frequencies/</guid>
+      <pubDate>Thu, 15 May 2025 00:00:00 GMT</pubDate>
+      <description>Explore the fascinating world of neural networks and their learning mechanisms. This article delves into the physics behind neural networks, spectral bias, and the role of differential equations in shaping their learning processes.</description>
+      <category>Neural Networks</category>
+      <category>Physics-Informed AI</category>
+      <category>Spectral Bias</category>
+      <category>Differential Equations</category>
+      <enclosure url="https://developer-blogs.nvidia.com/wp-content/uploads/2021/05/wave-b.png" type="image/png" length="0" />
+    </item>
+  </channel>
+</rss>

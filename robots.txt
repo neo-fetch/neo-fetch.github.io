@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://neo-fetch.github.io/sitemap.xml
+Sitemap: https://mayankcdee.me/sitemap.xml

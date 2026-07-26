@@ -10,8 +10,8 @@
     // Redirects deep links into index.html with a special query that
     // index.html's inline script decodes back into the real path.
     //
-    // pathSegmentsToKeep = 0  →  user pages (neo-fetch.github.io)        ← current
-    // pathSegmentsToKeep = 1  →  project pages (neo-fetch.github.io/repo)
+    // pathSegmentsToKeep = 0  →  served from a domain apex               ← current
+    // pathSegmentsToKeep = 1  →  served from a subpath (/repo)
     var pathSegmentsToKeep = 0;
     var l = window.location;
     l.replace(

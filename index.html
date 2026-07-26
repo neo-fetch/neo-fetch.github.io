@@ -3,41 +3,150 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- %-placeholders are filled by scripts/vite-plugin-site-meta.mts from
+       src/site.config.json. Do not hardcode the host here — index.html and
+       config.ts drifting apart is what put a canonical for a redirecting
+       domain on the live site. -->
   <title>Mayank Deshpande</title>
   <meta name="description" content="Personal site and blog of Mayank Deshpande — engineering, AI research, and the occasional liner notes." />
   <meta name="author" content="Mayank Deshpande" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://mayankcdee.me/" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0a0a0a" />
 
   <!-- Open Graph (Facebook, LinkedIn, WhatsApp, Slack, Discord) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Mayank Deshpande" />
-  <meta property="og:description" content="Personal site and blog — engineering, AI research, and the occasional liner notes." />
-  <meta property="og:url" content="https://neo-fetch.github.io/" />
+  <meta property="og:description" content="Personal site and blog of Mayank Deshpande — engineering, AI research, and the occasional liner notes." />
+  <meta property="og:url" content="https://mayankcdee.me/" />
   <meta property="og:site_name" content="Mayank Deshpande" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://raw.githubusercontent.com/neo-fetch/mcbk/master/me%20cooking%20pasta.png" />
+  <meta property="og:image:width" content="1334" />
+  <meta property="og:image:height" content="1844" />
+  <meta property="og:image:alt" content="Mayank Deshpande cooking pasta" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mayank Deshpande" />
-  <meta name="twitter:description" content="Personal site and blog — engineering, AI research, and the occasional liner notes." />
+  <meta name="twitter:description" content="Personal site and blog of Mayank Deshpande — engineering, AI research, and the occasional liner notes." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/neo-fetch/mcbk/master/me%20cooking%20pasta.png" />
+  <meta name="twitter:image:alt" content="Mayank Deshpande cooking pasta" />
 
-  <link rel="canonical" href="https://neo-fetch.github.io/" />
+  <link rel="alternate" type="application/rss+xml" title="Mayank Deshpande" href="https://mayankcdee.me/feed.xml" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-DbngBIT4.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CaatZR8o.css">
+
+  <script type="application/ld+json" data-managed="seo">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://mayankcdee.me/#person",
+      "name": "Mayank Deshpande",
+      "url": "https://mayankcdee.me/",
+      "sameAs": [
+        "https://github.com/neo-fetch"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mayankcdee.me/#website",
+      "name": "Mayank Deshpande",
+      "url": "https://mayankcdee.me/",
+      "description": "Personal site and blog of Mayank Deshpande — engineering, AI research, and the occasional liner notes.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://mayankcdee.me/#person"
+      }
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://mayankcdee.me/#blog",
+      "name": "Mayank Deshpande",
+      "url": "https://mayankcdee.me/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://mayankcdee.me/#person"
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Understanding How Neural Networks Learn: A Peek into Physics and Frequencies",
+          "url": "https://mayankcdee.me/article/how-neural-networks-learn-physics-and-frequencies/",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://mayankcdee.me/article/how-neural-networks-learn-physics-and-frequencies/"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "From Hover to SecureLogin: My Raspberry Pi Automation Journey",
+          "url": "https://mayankcdee.me/article/raspberry-pi-automation-securelogin/",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://mayankcdee.me/article/raspberry-pi-automation-securelogin/"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Lang-PINN: Bridging Natural Language and Scientific Simulation",
+          "url": "https://mayankcdee.me/article/lang-pinn-natural-language-scientific-simulation/",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://mayankcdee.me/article/lang-pinn-natural-language-scientific-simulation/"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "PDEpilot: Natural Language to Verified Solver Code",
+          "url": "https://mayankcdee.me/article/pdepilot-natural-language-to-solver-code/",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://mayankcdee.me/article/pdepilot-natural-language-to-solver-code/"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "South Bengaluru, a Stove, and Old War Songs",
+          "url": "https://mayankcdee.me/article/south-bengaluru-a-stove-and-old-war-songs/",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://mayankcdee.me/article/south-bengaluru-a-stove-and-old-war-songs/"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Draw Your Agents: A Visual AI Agent Builder That Runs Entirely in Your Browser",
+          "url": "https://mayankcdee.me/article/draw-your-agents-visual-ai-agent-builder/",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://mayankcdee.me/article/draw-your-agents-visual-ai-agent-builder/"
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+  <script type="module" crossorigin src="/assets/index-BetNINsg.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BVSluewo.css">
 </head>
 
 <body>
   <script>
     // SPA redirect handler — pairs with public/404.html (rafgraph/spa-github-pages)
-    // Decodes a redirect like /?/article/5 back into /article/5 before React boots.
+    // Decodes a redirect like /?/article/foo/ back into /article/foo/ before React boots.
     (function (l) {
       if (l.search[1] === '/') {
         var decoded = l.search.slice(1).split('&').map(function (s) {
