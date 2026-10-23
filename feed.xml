@@ -5,8 +5,23 @@
     <link>https://mayankcdee.me/</link>
     <description>Personal site and blog of Mayank Deshpande — engineering, AI research, and the occasional liner notes.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Jul 2026 09:37:33 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 12:02:44 GMT</lastBuildDate>
     <atom:link href="https://mayankcdee.me/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pi harness: A Self-Service Platform for Document-Grounded Agents</title>
+      <link>https://mayankcdee.me/article/pi-harness-self-service-agent-platform/</link>
+      <guid isPermaLink="true">https://mayankcdee.me/article/pi-harness-self-service-agent-platform/</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Upload your PDFs, Office files and spreadsheets, write instructions, publish, and chat. pi harness turns a team's documents into a cited, guard-railed agent on the pi SDK and Gemini — with streaming tool timelines and sandboxed dashboards.</description>
+      <category>AI Agents</category>
+      <category>pi SDK</category>
+      <category>Gemini</category>
+      <category>Vertex AI</category>
+      <category>RAG</category>
+      <category>Cloud Run</category>
+      <category>SSE</category>
+      <enclosure url="https://mayankcdee.me/blog/pi-harness/cover.png" type="image/png" length="0" />
+    </item>
     <item>
       <title>Draw Your Agents: A Visual AI Agent Builder That Runs Entirely in Your Browser</title>
       <link>https://mayankcdee.me/article/draw-your-agents-visual-ai-agent-builder/</link>
