@@ -5,8 +5,22 @@
     <link>https://mayankcdee.me/</link>
     <description>Personal site and blog of Mayank Deshpande — engineering, AI research, and the occasional liner notes.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Oct 2026 12:02:44 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 12:53:26 GMT</lastBuildDate>
     <atom:link href="https://mayankcdee.me/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reproducing AutoFEA: When an LLM Writes the Finite Element Model</title>
+      <link>https://mayankcdee.me/article/reproducing-autofea-llm-finite-element-analysis/</link>
+      <guid isPermaLink="true">https://mayankcdee.me/article/reproducing-autofea-llm-finite-element-analysis/</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>I rebuilt AutoFEA, where an LLM writes a CalculiX deck guided by a GCN-Transformer retriever and answers from the solver, from the paper and the authors' notebook. The paper reports 90.2 %. My first converged run got 10 %. Here is why: a retriever that learned the base rate, and a case study whose inputs can't produce its answer.</description>
+      <category>AutoFEA</category>
+      <category>CalculiX</category>
+      <category>Finite Element Analysis</category>
+      <category>Graph Neural Networks</category>
+      <category>Gemini</category>
+      <category>Reproducibility</category>
+      <enclosure url="https://mayankcdee.me/blog/autofea/cover.png" type="image/png" length="0" />
+    </item>
     <item>
       <title>pi harness: A Self-Service Platform for Document-Grounded Agents</title>
       <link>https://mayankcdee.me/article/pi-harness-self-service-agent-platform/</link>
