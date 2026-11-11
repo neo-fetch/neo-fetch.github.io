@@ -21,6 +21,20 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#0a0a0a" />
 
+  <!-- Apply the visitor's light/dark choice before first paint, on every
+       route. ThemeToggle (landing only) otherwise sets it, so an article
+       opened by URL used to render light whatever the preference. -->
+  <script>
+    (function () {
+      var t;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'dark' && t !== 'light') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.classList.add(t);
+    })();
+  </script>
+
   <!-- Open Graph (Facebook, LinkedIn, WhatsApp, Slack, Discord) -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content="From Hover to SecureLogin: My Raspberry Pi Automation Journey — Mayank Deshpande" />
@@ -49,8 +63,8 @@
     rel="stylesheet">
 
   
-  <script type="module" crossorigin src="/assets/index-C9LkSbxM.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-qxfTcXtT.css">
+  <script type="module" crossorigin src="/assets/index-DqgGgIPK.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BvedndVV.css">
   <meta property="article:published_time" content="2025-09-20" />
   <meta property="article:modified_time" content="2025-09-20" />
   <meta property="article:author" content="Mayank Deshpande" />
