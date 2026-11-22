@@ -23,7 +23,9 @@
 
   <!-- Apply the visitor's light/dark choice before first paint, on every
        route. ThemeToggle (landing only) otherwise sets it, so an article
-       opened by URL used to render light whatever the preference. -->
+       opened by URL used to render light whatever the preference.
+       Also marks the page as running JS (`js`), which hides the static
+       [data-prerender] text the build writes for no-JS readers (index.css). -->
   <script>
     (function () {
       var t;
@@ -31,7 +33,7 @@
       if (t !== 'dark' && t !== 'light') {
         t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       }
-      document.documentElement.classList.add(t);
+      document.documentElement.classList.add('js', t);
     })();
   </script>
 
@@ -63,8 +65,8 @@
     rel="stylesheet">
 
   
-  <script type="module" crossorigin src="/assets/index-D8SziUH9.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-AYhjBOcj.css">
+  <script type="module" crossorigin src="/assets/index-B84tdNT5.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CZPP6QzA.css">
   <script type="application/ld+json" data-managed="seo">{
   "@context": "https://schema.org",
   "@graph": [
@@ -173,7 +175,7 @@
       }
     }(window.location));
   </script>
-  <div id="root"><nav aria-label="Articles">
+  <div id="root"><nav data-prerender aria-label="Articles">
       <h1>Mayank Deshpande — Discography</h1>
       <ol>
       <li>
